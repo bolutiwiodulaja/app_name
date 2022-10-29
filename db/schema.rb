@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_25_005110) do
+ActiveRecord::Schema.define(version: 2022_10_28_024151) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "birth_year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "name"
@@ -18,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_10_25_005110) do
     t.integer "num_of_pages"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
   end
 
 end
